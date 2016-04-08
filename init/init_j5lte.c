@@ -36,12 +36,6 @@
 
 #include "init_msm.h"
 
-void init_dsds() {
-    property_set("ro.multisim.set_audio_params", "false");
-    property_set("ro.multisim.simslotcount", "1");
-    property_set("persist.radio.multisim.config", "");
-}
-
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
     char platform[PROP_VALUE_MAX];
@@ -66,8 +60,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "j5nltexx-user 5.1.1 LMY48B J500FNXXU1APC2 release-keys");
         property_set("ro.product.model", "SM-J500FN");
         property_set("ro.product.device", "j5nlte");
-
-        init_dsds();
     }
 
     property_get("ro.product.device", device);
