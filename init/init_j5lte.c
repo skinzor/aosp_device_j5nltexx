@@ -37,9 +37,9 @@
 #include "init_msm.h"
 
 void init_dsds() {
-    property_set("ro.multisim.set_audio_params", "true");
-    property_set("ro.multisim.simslotcount", "2");
-    property_set("persist.radio.multisim.config", "dsds");
+    property_set("ro.multisim.set_audio_params", "false");
+    property_set("ro.multisim.simslotcount", "1");
+    property_set("persist.radio.multisim.config", "");
 }
 
 void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
@@ -62,24 +62,10 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
     if (strstr(bootloader, "J500FN")) {
         /* SM-J500FN */
-        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:5.0.2/LRX22G/J500FNXXU1BOE6:user/release-keys");
-        property_set("ro.build.description", "j5nltexx-user 5.0.2 LRX22G J500FNXXU1BOE6 release-keys");
+        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:5.1.1/LMY48B/J500FNXXU1APC2:user/release-keys");
+        property_set("ro.build.description", "j5nltexx-user 5.1.1 LMY48B J500FNXXU1APC2 release-keys");
         property_set("ro.product.model", "SM-J500FN");
         property_set("ro.product.device", "j5nlte");
-    } else if (strstr(bootloader, "J500F")) {
-        /* SM-J500F */
-        property_set("ro.build.fingerprint", "samsung/j5ltexx/a5lte:5.0.2/LRX22G/J500FXXU1BOH4:user/release-keys");
-        property_set("ro.build.description", "j5ltexx-user 5.0.2 LRX22G J500FXXU1BOH4 release-keys");
-        property_set("ro.product.model", "SM-J500F");
-        property_set("ro.product.device", "j5lte");
-
-        init_dsds();
-    } else if (strstr(bootloader, "J500G")) {
-        /* SM-J500G */
-        property_set("ro.build.fingerprint", "samsung/j5ltedd/j5lte:5.0.2/LRX22G/J500GXXU1BOJ2:user/release-keys");
-        property_set("ro.build.description", "j5ltedd-user 5.0.2 LRX22G J500GXXU1BOJ2 release-keys");
-        property_set("ro.product.model", "SM-J500G");
-        property_set("ro.product.device", "j5lte");
 
         init_dsds();
     }
