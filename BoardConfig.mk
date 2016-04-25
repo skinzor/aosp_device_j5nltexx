@@ -27,7 +27,7 @@
 -include vendor/samsung/j5nltexx/BoardConfigVendor.mk
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := j5nlte,j5nltexx,SM-J500FN
+TARGET_OTA_ASSERT_DEVICE := j5nlte,j5nltexx
 
 # Kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_j5nlte_defconfig
@@ -35,4 +35,4 @@ TARGET_KERNEL_CONFIG := cyanogenmod_j5nlte_defconfig
 # Vendor Init
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/j5nltexx/init/init_j5lte.c
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/j5nltexx/init/init_j5nlte.c
