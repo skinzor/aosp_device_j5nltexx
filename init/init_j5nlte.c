@@ -60,7 +60,15 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
         property_set("ro.build.description", "j5nltexx-user 5.1.1 LMY48B J500FNXXU1APC2 release-keys");
         property_set("ro.product.model", "SM-J500FN");
         property_set("ro.product.device", "j5nlte");
-    }
+        
+    }else if (strstr(bootloader, "J500FXX")) {
+        /* SM-J500F single sim variant */
+        property_set("ro.build.fingerprint", "samsung/j5ltexx/j5lte:5.1.1/LRX22G/J500FXXU1APB4:user/release-keys");
+        property_set("ro.build.description", "j5ltexx-user 5.1.1 LMY48B J500FXXU1APB4 release-keys");
+        property_set("ro.product.model", "SM-J500F");
+        property_set("ro.product.device", "j5lte");
+     }
+    
 
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
