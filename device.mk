@@ -23,8 +23,10 @@ TARGET_SCREEN_WIDTH := 720
 # Device overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/j5nltexx/overlay
 
-PRODUCT_PROPERTY_OVERRIDES += ro.telephony.default_network=9
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.lte_vrte_ltd=1 \
+    telephony.lteOnCdmaDevice=0 \
+    ro.telephony.default_network=9
 
 # Inherit from j5-common
 $(call inherit-product, device/samsung/j5-common/common.mk)
-
