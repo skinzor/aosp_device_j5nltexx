@@ -22,6 +22,7 @@ TARGET_SCREEN_WIDTH := 720
 
 # NFC packages
 PRODUCT_PACKAGES += \
+    libnfc \
     libnfc_nci \
     NfcNci \
     Tag \
