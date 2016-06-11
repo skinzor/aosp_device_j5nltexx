@@ -24,6 +24,7 @@ TARGET_SCREEN_WIDTH := 720
 PRODUCT_PACKAGES += \
     nfc_nci.bcm2079x.default \
     libnfc_nci \
+    libnfc_nci_jni \
     NfcNci \
     Tag \
     com.android.nfc_extras
