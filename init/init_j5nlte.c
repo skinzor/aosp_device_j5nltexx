@@ -32,39 +32,42 @@
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
+#include "init_msm.h"
 
-#define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
-
-void vendor_load_properties()
+void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *board_type)
 {
-    char platform[PROP_VALUE_MAX];
-    char bootloader[PROP_VALUE_MAX];
-    char device[PROP_VALUE_MAX];
-    char devicename[PROP_VALUE_MAX];
-    int rc;
+   char platform[PROP_VALUE_MAX];
+   char bootloader[PROP_VALUE_MAX];
+   char device[PROP_VALUE_MAX];
+   char devicename[PROP_VALUE_MAX];
+   int rc;
 
-    rc = property_get("ro.board.platform", platform);
-    if (!rc || !ISMATCH(platform, ANDROID_TARGET))
-        return;
+   UNUSED(msm_id);
+   UNUSED(msm_ver);
+   UNUSED(board_type);
 
-    property_get("ro.bootloader", bootloader);
+   rc = property_get("ro.board.platform", platform);
+   if (!rc || !ISMATCH(platform, ANDROID_TARGET))
+      return;
 
-    if (strstr(bootloader, "J500FN")) {
-        /* SM-J500FN */
-        property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:5.1.1/LMY48B/J500FNXXU1APC2:user/release-keys");
-        property_set("ro.build.description", "j5nltexx-user 5.1.1 LMY48B J500FNXXU1APC2 release-keys");
-        property_set("ro.product.model", "SM-J500FN");
-        property_set("ro.product.device", "j5nlte");
+   property_get("ro.bootloader", bootloader);
 
-    } else if (strstr(bootloader, "J500F")) {
-        /* SM-J500F */
-        property_set("ro.build.fingerprint", "samsung/j5ltexx/j5lte:5.1.1/LRX22G/J500FXXU1APB4:user/release-keys");
-        property_set("ro.build.description", "j5ltexx-user 5.1.1 LMY48B J500FXXU1APB4 release-keys");
-        property_set("ro.product.model", "SM-J500F");
-        property_set("ro.product.device", "j5lte");
-    }
+   if (strstr(bootloader, "J500FN")) {
+      /* SM-J500FN */
+      property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:5.1.1/LMY48B/J500FNXXU1APC2:user/release-keys");
+      property_set("ro.build.description", "j5nltexx-user 5.1.1 LMY48B J500FNXXU1APC2 release-keys");
+      property_set("ro.product.model", "SM-J500FN");
+      property_set("ro.product.device", "j5nlte");
 
-    property_get("ro.product.device", device);
-    strlcpy(devicename, device, sizeof(devicename));
-    INFO("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);
+   } else if (strstr(bootloader, "J500F")) {
+      /* SM-J500F */
+      property_set("ro.build.fingerprint", "samsung/j5ltexx/j5lte:5.1.1/LRX22G/J500FXXU1APB4:user/release-keys");
+      property_set("ro.build.description", "j5ltexx-user 5.1.1 LMY48B J500FXXU1APB4 release-keys");
+      property_set("ro.product.model", "SM-J500F");
+      property_set("ro.product.device", "j5lte");
+   }
+
+   property_get("ro.product.device", device);
+   strlcpy(devicename, device, sizeof(devicename));
+   INFO("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);
 }
