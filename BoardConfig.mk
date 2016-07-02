@@ -49,7 +49,7 @@ TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/samsung/j5nltexx/init/init_j5nlte.c
 
-ifeq ($(TARGET_DEVICE),j5nltexx)
+ifeq ($(PRODUCT_DEVICE),j5nltexx)
     mkdir -p /system/app/NfcNci/lib/arm
     ln -sf /system/lib/libnfc_nci_jni.so /system/app/NfcNci/lib/arm/libnfc_nci_jni.so
 endif
