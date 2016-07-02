@@ -48,9 +48,3 @@ TARGET_KERNEL_SOURCE := kernel/samsung/j5lte
 TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_LIBINIT_DEFINES_FILE := device/samsung/j5nltexx/init/init_j5nlte.c
-
-NFC_SYMLINKS:
-	mkdir -p $(TARGET_OUT)/app/NfcNci/lib/arm
-	ln -sf $(TARGET_OUT)/lib/libnfc_nci_jni.so $(TARGET_OUT)/app/NfcNci/lib/arm/libnfc_nci_jni.so
-
-ALL_DEFAULT_INSTALLED_MODULES += NFC_SYMLINKS
