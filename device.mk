@@ -34,6 +34,11 @@ PRODUCT_COPY_FILES += \
     device/samsung/j5nltexx/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     device/samsung/j5nltexx/nfc/nfcee_access.xml:system/etc/nfcee_access.xml
 
+# NFC packages
+PRODUCT_PACKAGES += \
+    NfcNci \
+    Tag
+
 # Device overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/j5nltexx/overlay
 
