@@ -40,6 +40,9 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # Assert
 TARGET_OTA_ASSERT_DEVICE := j5nlte
 
+#NFC
+BOARD_NFC_DEVICE := "/dev/pn547"
+
 # Kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_j5nlte_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/j5lte
