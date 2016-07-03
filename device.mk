@@ -20,13 +20,14 @@ $(call inherit-product-if-exists, vendor/samsung/j5nltexx/j5nltexx-vendor.mk)
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
+#NFC
+BOARD_NFC_DEVICE := "/dev/pn547"
+
 # NFC Permissions
 PRODUCT_COPY_FILES += \
-    device/samsung/j5nltexx/nfc/com.broadcom.nfc.xml:system/etc/permissions/com.broadcom.nfc.xml \
-    device/samsung/j5nltexx/nfc/com.gsma.services.nfc.xml:system/etc/permissions/com.gsma.services.nfc.xml \
-    device/samsung/j5nltexx/nfc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
-    device/samsung/j5nltexx/nfc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    device/samsung/j5nltexx/nfc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
+    frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
 
 # NFC configuration
 PRODUCT_COPY_FILES += \
@@ -37,7 +38,10 @@ PRODUCT_COPY_FILES += \
 # NFC packages
 PRODUCT_PACKAGES += \
     NfcNci \
-    Tag
+    Tag \
+    libnfc-nci \
+    nfc_nci.bcm2079x.default \
+    nfc_nci.pn54x.default
 
 # Device overlay
 DEVICE_PACKAGE_OVERLAYS += device/samsung/j5nltexx/overlay
