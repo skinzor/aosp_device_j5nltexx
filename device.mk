@@ -20,9 +20,6 @@ $(call inherit-product-if-exists, vendor/samsung/j5nltexx/j5nltexx-vendor.mk)
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 
-#NFC
-BOARD_NFC_DEVICE := "/dev/pn547"
-
 # NFC Permissions
 PRODUCT_COPY_FILES += \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
