@@ -32,6 +32,9 @@ PRODUCT_COPY_FILES += \
     device/samsung/j5nltexx/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
     device/samsung/j5nltexx/nfc/nfcee_access.xml:system/etc/nfcee_access.xml
 
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    rild.libpath2=/system/lib/libsec-ril-dsds.so
+
 # NFC packages
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
