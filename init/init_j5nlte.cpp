@@ -51,8 +51,8 @@ void vendor_load_properties()
 
    if (strstr(bootloader, "J500FN")) {
       /* SM-J500FN */
-      property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:6.0.1/MMB29M/J500FNXXU1BPH1:user/release-keys");
-      property_set("ro.build.description", "j5nltexx-user 6.0.1 MMB29M J500FNXXU1BPH1 release-keys");
+      property_set("ro.build.fingerprint", "samsung/j5nltexx/j5nlte:6.0.1/MMB29M/J500FNXXU1BPK3:user/release-keys");
+      property_set("ro.build.description", "j5nltexx-user 6.0.1 MMB29M J500FNXXU1BPK3 release-keys");
       property_set("ro.product.model", "SM-J500FN");
       property_set("ro.product.device", "j5nlte");
 
