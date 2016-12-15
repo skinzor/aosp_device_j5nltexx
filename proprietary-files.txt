@@ -1,0 +1,13 @@
+# RIL
+bin/rild
+vendor/lib/libril-qcril-hook-oem.so
+lib/libril.so
+lib/libsecnativefeature.so
+lib/libsec-ril.so
+lib/libsecril-client.so
+lib/libaudio-ril.so
+
+# NFC
+vendor/firmware/libpn548ad_fw.so
+lib/hw/nfc_nci.MSM8916.so
+lib/libnfc-nci.so
